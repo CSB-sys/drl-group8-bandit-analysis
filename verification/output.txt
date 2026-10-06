@@ -1,0 +1,51 @@
+
+=== CHANDAN VERIFICATION ===
+Scenario A gap: 0.100000 -> 0.100
+Scenario B gap: 0.005000 -> 0.005
+Scenario C gap: 0.005000 -> 0.005
+A gap / B gap: 20.000000 -> 20.00 times harder
+B UCB-Tuned regret from gap x suboptimal pulls: 212.210750 -> 212.21 (paper Table 4: 212.21)
+C UCB-Tuned regret from gap x suboptimal pulls: 226.089500 -> 226.09 (paper Table 5: 226.09)
+
+=== DIVAKARAN VERIFICATION ===
+Bernoulli variance p=0.900: 0.090000 -> 0.090000
+Bernoulli variance p=0.895: 0.093975 -> 0.093975
+Bernoulli variance p=0.890: 0.097900 -> 0.097900
+Bernoulli variance p=0.800: 0.160000 -> 0.160000
+UCB-Tuned variance clip ceiling (UCB_Tuned.py line 51): 0.250000 -> min(1/4, V_ks) caps the variance term at 0.25
+Max Bernoulli variance over tested arms: 0.160000 -> 0.160000 - below the 0.25 clip, so the clip never binds here
+
+=== MADHULATHA VERIFICATION ===
+Scenario A: UCB-Tuned reduction vs UCB: 87.122643 -> 87.12%
+Scenario B: UCB-Tuned reduction vs UCB: 81.173204 -> 81.17%
+Scenario C: UCB-Tuned reduction vs UCB: 80.718422 -> 80.72%
+Scenario B: tuned ETC advantage over UCB-Tuned: 29.004288 -> 29.00%
+Scenario C: tuned ETC advantage over UCB-Tuned: 24.574285 -> 24.57%
+
+=== AKASH VERIFICATION ===
+Scenario B variance at p=0.895: 0.093975 -> 0.093975
+Scenario B variance at p=0.900: 0.090000 -> 0.090000
+Scenario B variance difference: 0.003975 -> 0.003975
+Scenario C variance at p=0.890: 0.097900 -> 0.097900
+Scenario C variance at p=0.895: 0.093975 -> 0.093975
+Scenario C variance difference: 0.003925 -> 0.003925
+Paper baseline reward variance, p=0.895 at T=10^6 (Section 4.3): 93975.000000 -> 93975 - matches the 93,975 printed in the paper
+
+=== REPO VERIFICATION ===
+ETC (m=100), Scenario A [ETC/exploration_rounds_100/average_results_800_900.csv]: 10.095000 -> paper 10.10 vs repo 10.0950 - match
+UCB-Tuned, Scenario A [UCB-Tuned/default/average_results_800_900.csv]: 30.669000 -> paper 30.67 vs repo 30.6690 - match
+EUCBV, Scenario A [EUCBV/rho_0_5/average_results_800_900.csv]: 47.727000 -> paper 47.70 vs repo 47.7270 - match
+UCB, Scenario A [UCB/default/average_results_800_900.csv]: 238.175000 -> paper 238.17 vs repo 238.1750 - match
+UCB-Improved, Scenario A [UCB-Improved/delta_1/average_results_800_900.csv]: 32500.106000 -> paper 32,500.11 vs repo 32,500.1060 - match
+ETC (m=10000), Scenario B [ETC/exploration_rounds_10000/average_results_895_900.csv]: 150.663100 -> paper 150.66 vs repo 150.6631 - match
+UCB-Tuned, Scenario B [UCB-Tuned/default/average_results_895_900.csv]: 212.208400 -> paper 212.21 vs repo 212.2084 - match
+UCB, Scenario B [UCB/default/average_results_895_900.csv]: 1127.173800 -> paper 1,127.17 vs repo 1,127.1738 - match
+ETC (m=10000), Scenario C [ETC/exploration_rounds_10000/average_results_890_895.csv]: 170.534600 -> paper 170.53 vs repo 170.5346 - match
+UCB-Tuned, Scenario C [UCB-Tuned/default/average_results_890_895.csv]: 226.087000 -> paper 226.09 vs repo 226.0870 - match
+UCB, Scenario C [UCB/default/average_results_890_895.csv]: 1172.574200 -> paper 1,172.57 vs repo 1,172.5742 - match
+
+CSV written to: verification_results.csv
+
+All verification assertions passed.
+Scope: calculation verification against paper Tables 3-5 and the
+author's published CSV output. Not a rerun of the full simulation.

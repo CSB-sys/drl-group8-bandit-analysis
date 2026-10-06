@@ -1,0 +1,36 @@
+contributor,calculation,raw_value,display_check
+chandan,Scenario A gap,0.100000000000,0.100
+chandan,Scenario B gap,0.005000000000,0.005
+chandan,Scenario C gap,0.005000000000,0.005
+chandan,A gap / B gap,20.000000000000,20.00 times harder
+chandan,B UCB-Tuned regret from gap x suboptimal pulls,212.210750000000,212.21 (paper Table 4: 212.21)
+chandan,C UCB-Tuned regret from gap x suboptimal pulls,226.089500000000,226.09 (paper Table 5: 226.09)
+divakaran,Bernoulli variance p=0.900,0.090000000000,0.090000
+divakaran,Bernoulli variance p=0.895,0.093975000000,0.093975
+divakaran,Bernoulli variance p=0.890,0.097900000000,0.097900
+divakaran,Bernoulli variance p=0.800,0.160000000000,0.160000
+divakaran,UCB-Tuned variance clip ceiling (UCB_Tuned.py line 51),0.250000000000,"min(1/4, V_ks) caps the variance term at 0.25"
+divakaran,Max Bernoulli variance over tested arms,0.160000000000,"0.160000 - below the 0.25 clip, so the clip never binds here"
+madhulatha,Scenario A: UCB-Tuned reduction vs UCB,87.122643489944,87.12%
+madhulatha,Scenario B: UCB-Tuned reduction vs UCB,81.173203687110,81.17%
+madhulatha,Scenario C: UCB-Tuned reduction vs UCB,80.718421927902,80.72%
+madhulatha,Scenario B: tuned ETC advantage over UCB-Tuned,29.004288205080,29.00%
+madhulatha,Scenario C: tuned ETC advantage over UCB-Tuned,24.574284576938,24.57%
+akash,Scenario B variance at p=0.895,0.093975000000,0.093975
+akash,Scenario B variance at p=0.900,0.090000000000,0.090000
+akash,Scenario B variance difference,0.003975000000,0.003975
+akash,Scenario C variance at p=0.890,0.097900000000,0.097900
+akash,Scenario C variance at p=0.895,0.093975000000,0.093975
+akash,Scenario C variance difference,0.003925000000,0.003925
+akash,"Paper baseline reward variance, p=0.895 at T=10^6 (Section 4.3)",93974.999999999985,"93975 - matches the 93,975 printed in the paper"
+repo,"ETC (m=100), Scenario A [ETC/exploration_rounds_100/average_results_800_900.csv]",10.095000000000,paper 10.10 vs repo 10.0950 - match
+repo,"UCB-Tuned, Scenario A [UCB-Tuned/default/average_results_800_900.csv]",30.669000000000,paper 30.67 vs repo 30.6690 - match
+repo,"EUCBV, Scenario A [EUCBV/rho_0_5/average_results_800_900.csv]",47.727000000000,paper 47.70 vs repo 47.7270 - match
+repo,"UCB, Scenario A [UCB/default/average_results_800_900.csv]",238.175000000000,paper 238.17 vs repo 238.1750 - match
+repo,"UCB-Improved, Scenario A [UCB-Improved/delta_1/average_results_800_900.csv]",32500.106000000000,"paper 32,500.11 vs repo 32,500.1060 - match"
+repo,"ETC (m=10000), Scenario B [ETC/exploration_rounds_10000/average_results_895_900.csv]",150.663100000000,paper 150.66 vs repo 150.6631 - match
+repo,"UCB-Tuned, Scenario B [UCB-Tuned/default/average_results_895_900.csv]",212.208400000000,paper 212.21 vs repo 212.2084 - match
+repo,"UCB, Scenario B [UCB/default/average_results_895_900.csv]",1127.173800000000,"paper 1,127.17 vs repo 1,127.1738 - match"
+repo,"ETC (m=10000), Scenario C [ETC/exploration_rounds_10000/average_results_890_895.csv]",170.534600000000,paper 170.53 vs repo 170.5346 - match
+repo,"UCB-Tuned, Scenario C [UCB-Tuned/default/average_results_890_895.csv]",226.087000000000,paper 226.09 vs repo 226.0870 - match
+repo,"UCB, Scenario C [UCB/default/average_results_890_895.csv]",1172.574200000000,"paper 1,172.57 vs repo 1,172.5742 - match"
